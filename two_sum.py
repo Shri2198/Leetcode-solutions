@@ -3,7 +3,7 @@ class Solution:
         res = {}
         for i in range(len(nums)):
             diff = target - nums[i]
-            if diff in res and res[diff] != i:
+            if diff in res:
                 return [res[diff], i]
             else:
                 res[nums[i]] = i
