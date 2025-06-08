@@ -89,3 +89,43 @@ For each element, we first check if the current running total is negative - if s
 - **Time Complexity**:
     - Encode: O(n) where n is total length of all strings
     - Decode: O(n) single pass through encoded string
+
+## 11. Product of Array Except Self
+
+- **Algorithm**: Two-Pass Prefix/Suffix Product
+
+- **Explanation**: Calculates the product of all elements except self using two passes without division. First pass stores left products (product of all elements to the left), second pass multiplies by right products (product of all elements to the right). Uses the result array to store intermediate left products, then updates in-place with right products.
+
+- **Time Complexity**: O(n)
+
+## 12. Valid Sudoku
+
+- **Algorithm**: Hash Sets with Coordinate Mapping
+
+- **Explanation**: Uses three hash maps with sets to track seen numbers in each row, column, and 3x3 sub-box. For each non-empty cell, checks if the number already exists in its corresponding row, column, or sub-box. The key insight is using (r//3, c//3) to map any cell to its 3x3 sub-box identifier - this creates 9 unique sub-box coordinates (0,0) through (2,2).
+
+- **Time Complexity**: O(1)
+
+## 13. Longest Consecutive Sequence
+
+- **Algorithm**: Hash Set with Sequence Start Detection
+
+- **Explanation**: Converts the array to a set for O(1) lookups, then finds the start of each consecutive sequence by checking if i-1 exists. When a sequence start is found (no predecessor), it extends the sequence by incrementing and checking if the next number exists. This ensures each number is only visited once across all sequences.
+
+- **Time Complexity**: O(n)
+
+## 14. Valid Palindrome
+
+- **Algorithm**: Two Pointers
+
+- **Explanation**: First filters the string to keep only alphanumeric characters in lowercase. Then uses two pointers starting from both ends, comparing characters while moving toward the center. If any mismatch is found, it's not a palindrome. If all comparisons pass, it's a valid palindrome.
+
+- **Time Complexity**: O(n)
+
+## 15. Two Sum II - Input Array Is Sorted
+
+- **Algorithm**: Two Pointers
+
+- **Explanation**: Leverages the sorted array property. Uses two pointers starting from both ends. If the sum is too small, move left pointer right to get a larger number. If sum is too large, move right pointer left to get a smaller number. Continue until target sum is found.
+
+- **Time Complexity**: O(n)
