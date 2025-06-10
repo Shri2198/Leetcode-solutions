@@ -129,3 +129,20 @@ For each element, we first check if the current running total is negative - if s
 - **Explanation**: Leverages the sorted array property. Uses two pointers starting from both ends. If the sum is too small, move left pointer right to get a larger number. If sum is too large, move right pointer left to get a smaller number. Continue until target sum is found.
 
 - **Time Complexity**: O(n)
+
+## 16. 3Sum
+
+- **Algorithm**: Two Pointers with Sorting
+
+- **Explanation**: This solution uses a combination of sorting and the two-pointer technique to find all unique triplets that sum to zero.
+
+How it works:
+First, the array is sorted to enable the two-pointer approach and make duplicate handling easier
+For each element at index i, we treat it as the first element of a potential triplet
+We use two pointers (left and right) to find pairs in the remaining array that sum with nums[i] to equal zero
+The left pointer starts right after i, and the right pointer starts at the end
+We calculate the current sum and adjust pointers based on whether the sum is too small (move left pointer right) or too large (move right pointer left)
+When we find a valid triplet (sum = 0), we add it to results and skip duplicates by moving both pointers past identical values
+We also skip duplicate values for the outer loop element to avoid duplicate triplets
+
+- **Time Complexity**: O(n²)
